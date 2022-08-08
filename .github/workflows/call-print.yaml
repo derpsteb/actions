@@ -7,6 +7,10 @@ jobs:
     runs-on: ubuntu-latest
     env:
       MY_ENV: "foobar"
+      FOO: $GITHUB_WORKSPACE
+      BAR: $GITHUB_WORKSPACE/my/path
+      BARR: $GITHUB_WORKSPACE"/my/path"
+      BAZ: "$GITHUB_WORKSPACE/my/path"
     steps:
       - name: Check out repository
         uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b

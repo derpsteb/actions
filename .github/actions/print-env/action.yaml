@@ -13,8 +13,13 @@ runs:
         printf 'my pwd is: '$PWD'\n' > some-file
         printf '#1 my input is: ${{ inputs.myInput }}\n' >> some-file
         printf '#2 my input is: '${{ inputs.myInput }}'\n' >> some-file
-        printf 'my env is: '$(env)'\n' >> some-file
-        printf 'some global env: '${{ env.MY_ENV }}'\n' >> some-file
+        printf 'my env is: '$(env) >> some-file
+        printf '\nsome global env: '${{ env.MY_ENV }}'\n' >> some-file
+
+        printf 'FOO:'${{ env.FOO }}'\n' >> some-file
+        printf 'BAR:'${{ env.BAR }}'\n' >> some-file
+        printf 'BARR:'${{ env.BARR }}'\n' >> some-file
+        printf 'BAZ:'${{ env.BAZ }}'\n' >> some-file
 
         cat some-file
       shell: bash

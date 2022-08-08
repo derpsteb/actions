@@ -10,11 +10,11 @@ runs:
   steps:
     - name: print
       run: |
-        printf 'my pwd is: '$PWD > some-file
-        printf '#1 my input is: ${{ inputs.myInput }}' >> some-file
-        printf '#2 my input is: '${{ inputs.myInput }} >> some-file
-        printf 'my env is: '$(env) >> some-file
-        printf 'some global env: '${{ env.MY_ENV }} >> some-file
+        printf 'my pwd is: '$PWD'\n' > some-file
+        printf '#1 my input is: ${{ inputs.myInput }}\n' >> some-file
+        printf '#2 my input is: '${{ inputs.myInput }}'\n' >> some-file
+        printf 'my env is: '$(env)'\n' >> some-file
+        printf 'some global env: '${{ env.MY_ENV }}'\n' >> some-file
 
         cat some-file
       shell: bash

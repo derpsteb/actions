@@ -13,9 +13,17 @@ jobs:
 
       - name: action1
         uses: ./.github/actions/print-env
+        with:
+          myInput: $GITHUB_WORKSPACE
       - name: action2
         uses: ./.github/actions/print-env
+        with:
+          myInput: ${GITHUB_WORKSPACE}
       - name: action3
         uses: ./.github/actions/print-env
+        with:
+          myInput: ${{ GITHUB_WORKSPACE }}
       - name: action4
         uses: ./.github/actions/print-env
+        with:
+          myInput: ${{ env.GITHUB_WORKSPACE }}

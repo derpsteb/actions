@@ -8,20 +8,14 @@ jobs:
     env:
       MY_ENV: "foobar"
     steps:
-      - name: action!
+      - name: Check out repository
+        uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b
+
+      - name: action1
         uses: ./.github/actions/print-env/action.yaml
-  call-action-2:
-    runs-on: ubuntu-latest
-    steps:
-      - name: action!
+      - name: action2
         uses: ./.github/actions/print-env/action.yaml
-  call-action-3:
-    runs-on: ubuntu-latest
-    steps:
-      - name: action!
+      - name: action3
         uses: ./.github/actions/print-env/action.yaml
-  call-action-4:
-    runs-on: ubuntu-latest
-    steps:
-      - name: action!
+      - name: action4
         uses: ./.github/actions/print-env/action.yaml

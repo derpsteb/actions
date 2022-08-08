@@ -1,0 +1,17 @@
+name: second level print
+description: print some inputs
+inputs:
+  t2Input:
+    description: foo
+    required: true
+
+runs:
+  using: "composite"
+  steps:
+    - name: print
+      run: |
+        printf '#1 my input is: ${{ inputs.t2Input }}\n' >> some-file
+        printf '#2 my input is: '${{ inputs.t2Input }}'\n' >> some-file
+
+        cat some-file
+      shell: bash

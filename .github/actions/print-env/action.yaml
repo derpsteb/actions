@@ -23,3 +23,8 @@ runs:
 
         cat some-file
       shell: bash
+
+    - name: call t2
+      uses: ./.github/actions/t2-action
+      with:
+        t2Input: ${{ env.BAZ }}

@@ -12,10 +12,10 @@ jobs:
         uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b
 
       - name: action1
-        uses: ./.github/actions/print-env/action.yaml
+        uses: ./.github/actions/print-env
       - name: action2
-        uses: ./.github/actions/print-env/action.yaml
+        uses: ./.github/actions/print-env
       - name: action3
-        uses: ./.github/actions/print-env/action.yaml
+        uses: ./.github/actions/print-env
       - name: action4
-        uses: ./.github/actions/print-env/action.yaml
+        uses: ./.github/actions/print-env

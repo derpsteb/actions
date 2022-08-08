@@ -1,0 +1,27 @@
+name: Call an action
+on:
+  workflow_dispatch:
+
+jobs:
+  call-action-1:
+    runs-on: ubuntu-latest
+    env:
+      MY_ENV: "foobar"
+    steps:
+      - name: action!
+        uses: ./.github/actions/print-env.yaml
+  call-action-2:
+    runs-on: ubuntu-latest
+    steps:
+      - name: action!
+        uses: ./.github/actions/print-env.yaml
+  call-action-3:
+    runs-on: ubuntu-latest
+    steps:
+      - name: action!
+        uses: ./.github/actions/print-env.yaml
+  call-action-4:
+    runs-on: ubuntu-latest
+    steps:
+      - name: action!
+        uses: ./.github/actions/print-env.yaml

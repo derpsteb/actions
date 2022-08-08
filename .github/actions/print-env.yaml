@@ -1,0 +1,18 @@
+name: print some inputs
+inputs:
+  myInput:
+    description: foo
+    required: true
+
+runs:
+  steps:
+    - name: print
+      run: |
+        printf 'my pwd is: '$PWD > some-file
+        printf '#1 my input is: ${{ input.myInput }}' >> some-file
+        printf '#2 my input is: '${{ input.myInput }} >> some-file
+        printf 'my env is: '$(env) >> some-file
+        printf 'some global env: '${{ env.MY_ENV }} >> some-file
+
+        cat some-file
+      shell: bash

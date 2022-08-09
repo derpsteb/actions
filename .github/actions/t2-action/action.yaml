@@ -13,10 +13,10 @@ runs:
         # printf 'some envs: '$GITHUB_WORKSPACE'\n' >> some-file
         # printf 'some envs: '${GITHUB_WORKSPACE}'\n' >> some-file
         # printf 'some envs: '${{ env.GITHUB_WORKSPACE }}'\n' >> some-file
-        if [ ${{ t2Input == "true" }} = true] then
+        if [ ${{ inputs.t2Input == "true" }} = true] then
           echo "true"
         fi
-        if [ ${{ t2Input == "false" }} = true] then
+        if [ ${{ inputs.t2Input == "false" }} = true] then
           echo "true"
         fi
         cat some-file
@@ -25,5 +25,5 @@ runs:
     - name: print 2
       run: |
         echo "running"
-      if: ${{ t2Input == "false" }}
+      if: ${{ inputs.t2Input == "false" }}
       shell: bash

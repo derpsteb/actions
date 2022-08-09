@@ -10,8 +10,9 @@ runs:
   steps:
     - name: print
       run: |
-        printf '#1 my input is: ${{ inputs.t2Input }}\n' >> some-file
-        printf '#2 my input is: '${{ inputs.t2Input }}'\n' >> some-file
+        printf 'some envs: '$GITHUB_WORKSPACE'\n' >> some-file
+        printf 'some envs: '${GITHUB_WORKSPACE}'\n' >> some-file
+        printf 'some envs: '${{ env.GITHUB_WORKSPACE }}'\n' >> some-file
 
         cat some-file
       shell: bash

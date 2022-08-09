@@ -31,5 +31,5 @@ runs:
     - name: print 2
       run: |
         echo "running"
-      if: ${{ inputs.t2Input == "false" }}
+      if: ${{ inputs.t2Input == 'false' }}
       shell: bash

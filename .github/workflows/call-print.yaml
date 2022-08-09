@@ -19,16 +19,25 @@ jobs:
         uses: ./.github/actions/print-env
         with:
           myInput: $GITHUB_WORKSPACE
-      - name: action2
-        uses: ./.github/actions/print-env
+      # - name: action2
+      #   uses: ./.github/actions/print-env
+      #   with:
+      #     myInput: ${GITHUB_WORKSPACE}
+      # - name: action3
+      #   uses: ./.github/actions/print-env
+      # doesnt work
+      # with:
+      #   myInput: ${{ GITHUB_WORKSPACE }}
+      # - name: action4
+      #   uses: ./.github/actions/print-env
+      #   with:
+      #     myInput: ${{ env.GITHUB_WORKSPACE }}
+      - name: action5
+        uses: ./.github/actions/t2-action
         with:
-          myInput: ${GITHUB_WORKSPACE}
-      - name: action3
-        uses: ./.github/actions/print-env
-        # doesnt work
-        # with:
-        #   myInput: ${{ GITHUB_WORKSPACE }}
-      - name: action4
-        uses: ./.github/actions/print-env
+          t2Input: "true"
+
+      - name: action5
+        uses: ./.github/actions/t2-action
         with:
-          myInput: ${{ env.GITHUB_WORKSPACE }}
+          t2Input: "false"

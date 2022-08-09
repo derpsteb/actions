@@ -25,7 +25,7 @@ runs:
     - name: print 2
       run: |
         echo "running"
-      if: ${{ inputs.t2Input == true }}
+      if: ${{ inputs.t2Input == 'true' }}
       shell: bash
 
     - name: print 2
